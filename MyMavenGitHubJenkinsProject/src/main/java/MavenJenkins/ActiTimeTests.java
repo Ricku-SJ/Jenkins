@@ -17,6 +17,7 @@ WebDriver driver;
 	@BeforeClass
 	public void openBrowser()
 	{
+		System.getProperty("browser");
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		Reporter.log("Open Browser",true);
@@ -25,7 +26,7 @@ WebDriver driver;
 	public void login() throws InterruptedException
 	{
 		Reporter.log("Login",true);
-		
+		driver.get(System.getProperty("url"));
 		driver.get("https://demo.actitime.com/");
 		Thread.sleep(5000);
 		driver.manage().window().maximize();
