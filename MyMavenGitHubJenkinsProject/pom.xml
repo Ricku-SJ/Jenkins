@@ -25,11 +25,6 @@
     <artifactId>poi</artifactId>
     <version>5.2.3</version>
 </dependency>
-	<dependency>
-		<groupId>com.actitime.REPOS</groupId>
-		<artifactId>GithubProject</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</dependency>
 </dependencies>
 <build>
  <plugins>
