@@ -17,7 +17,7 @@ WebDriver driver;
 	@BeforeClass
 	public void openBrowser()
 	{
-		System.getProperty("browser");
+		System.getProperty("browser").equalsIgnoreCase("Chrome");
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		Reporter.log("Open Browser",true);
