@@ -3,6 +3,7 @@ package MavenJenkins;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -17,10 +18,17 @@ WebDriver driver;
 	@BeforeClass
 	public void openBrowser()
 	{
-		System.getProperty("browser").equalsIgnoreCase("Chrome");
+		Reporter.log("Open Browser",true);
+		if(System.getProperty("browser").equalsIgnoreCase("Chrome"))
+	{
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
-		Reporter.log("Open Browser",true);
+	}
+		else if(System.getProperty("browser").equalsIgnoreCase("Firefox"))
+		{
+			WebDriverManager.firefoxdriver().setup();
+			driver=new FirefoxDriver();
+		}
 	}
 	@BeforeMethod
 	public void login() throws InterruptedException
