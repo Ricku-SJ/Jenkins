@@ -57,7 +57,7 @@
           </suiteXmlFiles>
           <SystemPropertyVariables>
           <executionBrowser>${browser}</executionBrowser>
-          <appURL>${appURL}</appURL>
+          <appURL>${url}</appURL>
           </SystemPropertyVariables>
         </configuration>
       </plugin>
